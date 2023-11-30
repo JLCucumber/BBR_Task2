@@ -76,11 +76,11 @@ class SupervisorGA:
         self.time_experiment = 180  # s
 
         # Rewards
-        self.CROSS_REWARD = 30 # 3
-        self.GOAL_REWARD = 100 # 10
+        self.CROSS_REWARD = 3 # 3
+        self.GOAL_REWARD = 10 # 10
         self.ZONE_REWARD = 0.0001
-        self.OBSTACLE_PASS_REWARD = 20       # 0.5
-        self.OBSTACLE_PASS_REWARD_LOW = 13   # 0.3
+        self.OBSTACLE_PASS_REWARD = 0.5      # 0.5
+        self.OBSTACLE_PASS_REWARD_LOW = 0.3   # 0.3
 
         # Initiate Supervisor Module
         self.supervisor = Supervisor()
@@ -145,16 +145,16 @@ class SupervisorGA:
         self.potentialzone_vertical = [-0.71, -0.38]  # y_low, y_high
         self.potentialzone_horizontal = [-0.54, -0.008, -0.32, -0.07]  # x_left, x_right, y_bottom, y_top
 
-        self.vec_zone1 = norm_vec(np.array([-3.4, 1.2]))  # -0.34, 0.12
-        self.vec_zone2 = norm_vec(np.array([2.4, 0.8]))   # 0.24, 0.08
-        self.vec_zone3 = norm_vec(np.array([0, 10]))      # [0, 10]
-        self.vec_zone4 = norm_vec(np.array([10, 0]))      # [10, 0]
+        self.vec_zone1 = norm_vec(np.array([-0.34, 0.12]))  # -0.34, 0.12
+        self.vec_zone2 = norm_vec(np.array([0.24, 0.08]))   # 0.24, 0.08
+        self.vec_zone3 = norm_vec(np.array([0, 1]))      # [0, 1]
+        self.vec_zone4 = norm_vec(np.array([1, 0]))      # [1, 0]
 
         ###########
         ### DEFINE here the 3 GA Parameters:
-        self.num_generations = 200
-        self.num_population = 15
-        self.num_elite = 2
+        self.num_generations = 300
+        self.num_population = 20
+        self.num_elite = 4
 
         # size of the genotype variable
         self.num_weights = 0
